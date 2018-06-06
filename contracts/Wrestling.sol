@@ -9,8 +9,8 @@ contract Wrestling {
   bool public wrestler1Played;
   bool public wrestler2Played;
 
-  uint private wrestler1Deposit;
-  uint private wrestler2Deposit;
+  uint public wrestler1Deposit;
+  uint public wrestler2Deposit;
 
   bool public gameFinished;
 
@@ -35,7 +35,6 @@ contract Wrestling {
 
     emit WrestlingStartsEvent(wrestler1, wrestler2);
   }
-
 
   function wrestle() public payable {
     require(!gameFinished && (msg.sender == wrestler1 || msg.sender == wrestler2));
